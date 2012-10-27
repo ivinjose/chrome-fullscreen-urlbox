@@ -1,9 +1,9 @@
 /**
- * Developed and owned by,
+ * Developed by,
  * @author: 	Ivin Jose
  * @contact: 	ivinjose@gmail.com
  * @webpage: 	http://picaflicka.com
- * Licensed under MIT license.
+ * Licensed under Apache v2.0 license.
  */
 
  /**
@@ -23,7 +23,7 @@ chrome.extension.onMessage.addListener(function(request,sender,sendResponse){
 		/* Remove any previous occurances of urlbox */
 		var urlbox = document.getElementById('chrome-fullscreen-urlbox');
 
-		/* Create new urlbox and set id and width */
+		/* Create new urlbox and set id and properties */
 		urlbox = document.createElement('input');
 		urlbox.id = 'chrome-fullscreen-urlbox';
 		urlbox.style.width = (window.innerWidth*3/4)+'px';
@@ -51,13 +51,9 @@ chrome.extension.onMessage.addListener(function(request,sender,sendResponse){
 
 				/* For going to a URL, user is required to add a ~ sign before the URL */
 				if( query[0]=='~' ){
-					// query = query.substring(1);
-					// query = query.toLowerCase();
-					// query = query.replace('http://','');
-					// query = query.replace('wwww.','');
 					query = query.substring(1).toLowerCase().replace('http://','').replace('wwww.','');
 
-					/* Then we add only the http part, assuming that https will get redirected to https automatically */
+					/* Then we add only the http part, assuming that http will get redirected to https automatically */
 					query = "http://" + query;
 					queryType = 'g';
 				}
@@ -65,8 +61,6 @@ chrome.extension.onMessage.addListener(function(request,sender,sendResponse){
 				chrome.extension.sendMessage({text:query,kind:queryType});
 			}
 		}
-
-		//alert('test'); //This alert somehow makes appending work in some sites. I wonder why! :O
 
 		/* Append the urlbox to body */
 		document.getElementsByTagName('body')[0].appendChild(urlbox);
