@@ -22,6 +22,9 @@ chrome.extension.onMessage.addListener(function(request,sender,sendResponse){
 
 		/* Remove any previous occurances of urlbox */
 		var urlbox = document.getElementById('chrome-fullscreen-urlbox');
+		if(urlbox){
+			urlbox.parentNode.removeChild(urlbox);
+		}
 
 		/* Create new urlbox and set id and properties */
 		urlbox = document.createElement('input');
