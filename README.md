@@ -1,4 +1,4 @@
-chrome-fullscreen-urlbox
+Chrome fullscreen urlbox
 ========================
 It's a real shame that Chrome doesn't give access to its Omnibox while in full screen mode. This extension provides the user with an input box which can accept both search queries as well as URLs. Basically, it provides you with an omnibox of its own.
 
