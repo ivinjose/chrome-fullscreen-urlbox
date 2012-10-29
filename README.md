@@ -17,7 +17,7 @@ Installing extension
 3. Select Tools > Extensions.
 4. Locate the extension file on your computer and drag the file onto the Extensions page.
 5. Review the list of permissions in the dialog that appears. If you would like to proceed, click Install.
-6. Set a keyboard shortcut for accessing this extension in full screen.
+6. Set a keyboard shortcut key for accessing this extension in full screen.
 
 Setting shortcut key [Important]
 ================================
