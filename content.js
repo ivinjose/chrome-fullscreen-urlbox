@@ -10,7 +10,7 @@
   * On recieving message from background.js (i.e., when user calls the extension), do the following steps:
   * 01: Remove any previous occurances of urlbox.
   * 02: Create new urlbox and set id and width.
-  * 03: Attach onBlur event handler to remove the urlbox on focusOut.
+  *	03: Attach onBlur event handler to remove the urlbox on focusOut.
   * 04: Attach onKeypress event handler to perform query processing.
   * 05: Append urlbox to the body.
   * 06: Get reference to newly added urlbox.
@@ -66,7 +66,7 @@ chrome.extension.onMessage.addListener(function(request,sender,sendResponse){
 		}
 
 		/* Append the urlbox to body */
-		document.getElementsByTagName('body')[0].appendChild(urlbox);
+		document.body.appendChild(urlbox);
 
 		/* Get a reference to newly added urlbox and setFocus on it */
 		urlbox = document.getElementById('chrome-fullscreen-urlbox');
